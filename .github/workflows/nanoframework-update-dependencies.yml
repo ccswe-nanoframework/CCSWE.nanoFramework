@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   update-dependencies:
-    uses: ccswe-apps/actions/.github/workflows/nanoframework-update-dependencies.yml@nanoframework
+    uses: ccswe-apps/actions/.github/workflows/nanoframework-update-dependencies.yml@master
     with:
       solution: 'CCSWE.nanoFramework.sln'
     secrets:

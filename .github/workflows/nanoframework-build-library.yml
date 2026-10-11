@@ -16,7 +16,7 @@ permissions:
 jobs:
   # Keep the id: required checks are `pipeline / build`, `/ package-lock`, `/ packages-updated`.
   pipeline:
-    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@nanoframework
+    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@master
     with:
       solution: 'CCSWE.nanoFramework.sln'
       discover-dependents: |
