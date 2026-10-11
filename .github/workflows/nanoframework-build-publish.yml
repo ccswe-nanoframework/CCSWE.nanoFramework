@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   pipeline:
-    uses: CCSWE-nanoFramework/actions-nanoframework/.github/workflows/nanoframework-build-publish.yml@master
+    uses: ccswe-nanoframework/actions-nanoframework/.github/workflows/nanoframework-build-publish.yml@master
     with:
       solution: 'CCSWE.nanoFramework.sln'
       publish-nuget: true

@@ -7,13 +7,13 @@
     <authors>Cory Charlton</authors>
     <owners>Cory Charlton,CCSWE</owners>
     <license type="file">LICENSE.md</license>
-    <projectUrl>https://github.com/CCSWE-nanoFramework/CCSWE.nanoFramework</projectUrl>
+    <projectUrl>https://github.com/ccswe-nanoframework/CCSWE.nanoFramework</projectUrl>
     <icon>images\ccswe-logo.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <readme>README.md</readme>
     <developmentDependency>false</developmentDependency>
     <description>A reusable mDNS responder server for nanoFramework with dependency injection support. Automatically handles A, PTR, SRV, and TXT queries based on registered hostname, IP address, and service instances.</description>
-    <repository type="git" url="https://github.com/CCSWE-nanoFramework/CCSWE.nanoFramework" commit="$commit$" />
+    <repository type="git" url="https://github.com/ccswe-nanoframework/CCSWE.nanoFramework" commit="$commit$" />
     <copyright>Copyright (c) Cory Charlton</copyright>
     <tags>nanoFramework C# csharp netmf netnf ccswe mdns multicast dns server</tags>
     <dependencies>

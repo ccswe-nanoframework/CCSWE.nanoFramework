@@ -7,13 +7,13 @@
     <authors>Cory Charlton</authors>
     <owners>Cory Charlton,CCSWE</owners>
     <license type="file">LICENSE.md</license>
-    <projectUrl>https://github.com/CCSWE-nanoFramework/CCSWE.nanoFramework</projectUrl>
+    <projectUrl>https://github.com/ccswe-nanoframework/CCSWE.nanoFramework</projectUrl>
     <icon>images\ccswe-logo.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <readme>README.md</readme>
     <developmentDependency>false</developmentDependency>
     <description>A fast ESP32 RMT library for controlling LED chipsets (NeoPixel, WS2812B, etc.).</description>
-    <repository type="git" url="https://github.com/CCSWE-nanoFramework/CCSWE.nanoFramework" commit="$commit$" />
+    <repository type="git" url="https://github.com/ccswe-nanoframework/CCSWE.nanoFramework" commit="$commit$" />
     <copyright>Copyright (c) Cory Charlton</copyright>
     <tags>nanoFramework C# csharp netmf netnf ccswe neopixel ws2812c</tags>
     <dependencies>

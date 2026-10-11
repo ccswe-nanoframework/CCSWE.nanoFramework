@@ -42,7 +42,7 @@ vstest.console.exe "test\UnitTests.CCSWE.nanoFramework.Core\bin\Release\NFUnitTe
 
 Test assemblies are compiled to `NFUnitTest.dll`. Each test project includes a `nano.runsettings` file (simulated device by default).
 
-CI/CD uses shared workflows from `CCSWE-nanoframework/actions-nanoframework` via GitHub Actions (see `.github/workflows/`). Builds require Windows; there is no local Linux build.
+CI/CD uses shared workflows from `ccswe-nanoframework/actions-nanoframework` via GitHub Actions (see `.github/workflows/`). Builds require Windows; there is no local Linux build.
 
 ## Repository Layout
 
