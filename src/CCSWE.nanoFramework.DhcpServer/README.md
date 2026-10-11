@@ -1,4 +1,4 @@
-[![Build](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-publish.yml/badge.svg)](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-publish.yml) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/blob/master/LICENSE.md) [![NuGet](https://img.shields.io/nuget/dt/CCSWE.nanoFramework.DhcpServer.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/CCSWE.nanoFramework.DhcpServer/) 
+[![Build](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-library.yml/badge.svg)](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-library.yml) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/blob/master/LICENSE.md) [![NuGet](https://img.shields.io/nuget/dt/CCSWE.nanoFramework.DhcpServer.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/CCSWE.nanoFramework.DhcpServer/) 
 
 # CCSWE.nanoFramework.DhcpServer
 

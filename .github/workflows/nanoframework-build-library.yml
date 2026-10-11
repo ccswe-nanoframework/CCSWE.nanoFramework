@@ -14,14 +14,14 @@ permissions:
   pull-requests: read
 
 jobs:
+  # Keep the id: required checks are `pipeline / build`, `/ package-lock`, `/ packages-updated`.
   pipeline:
-    uses: ccswe-nanoframework/actions-nanoframework/.github/workflows/nanoframework-build-publish.yml@master
+    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@nanoframework
     with:
       solution: 'CCSWE.nanoFramework.sln'
-      publish-nuget: true
-      dependents: |
-        CoryCharlton/Emily.Clock
+      discover-dependents: |
+        CoryCharlton
     secrets:
-      NUGET_ORG_API_KEY: ${{ secrets.NUGET_ORG_API_KEY }}
+      NUGET_API_KEY: ${{ secrets.NUGET_ORG_API_KEY }}
       AUTOMATION_APP_ID: ${{ secrets.AUTOMATION_APP_ID }}
       AUTOMATION_APP_KEY: ${{ secrets.AUTOMATION_APP_KEY }}

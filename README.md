@@ -1,4 +1,4 @@
-[![Build](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-publish.yml/badge.svg)](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-publish.yml) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+[![Build](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-library.yml/badge.svg)](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-library.yml) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
 
 # CCSWE.nanoFramework
 
