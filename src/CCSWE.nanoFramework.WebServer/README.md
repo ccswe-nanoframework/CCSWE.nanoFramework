@@ -1,8 +1,8 @@
-[![Build](https://github.com/CCSWE-nanoFramework/CCSWE.nanoFramework/actions/workflows/build-solution.yml/badge.svg)](https://github.com/CCSWE-nanoFramework/CCSWE.nanoFramework/actions/workflows/build-solution.yml) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/CCSWE-nanoFramework/CCSWE.nanoFramework/blob/master/LICENSE.md) [![NuGet](https://img.shields.io/nuget/dt/CCSWE.nanoFramework.WebServer.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/CCSWE.nanoFramework.WebServer/) 
+[![Build](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-publish.yml/badge.svg)](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/actions/workflows/nanoframework-build-publish.yml) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/blob/master/LICENSE.md) [![NuGet](https://img.shields.io/nuget/dt/CCSWE.nanoFramework.WebServer.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/CCSWE.nanoFramework.WebServer/) 
 
 # CCSWE.nanoFramework.WebServer
 
-A simple asynchronous web server for nanoFramework modeled after ASP.NET Core. See the [WebServer sample](https://github.com/CCSWE-nanoFramework/CCSWE.nanoFramework/tree/master/samples/Samples.CCSWE.nanoFramework.WebServer) for a complete example.
+A simple asynchronous web server for nanoFramework modeled after ASP.NET Core. See the [WebServer sample](https://github.com/ccswe-nanoframework/CCSWE.nanoFramework/tree/master/samples/Samples.CCSWE.nanoFramework.WebServer) for a complete example.
 
 ## Features
 
