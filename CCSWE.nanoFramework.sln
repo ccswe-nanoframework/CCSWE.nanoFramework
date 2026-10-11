@@ -13,10 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eng", "eng", "{31FB4C84-40C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{5B368C0C-6DA6-4D81-A1EB-83389AC2F9B4}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\build-solution.yml = .github\workflows\build-solution.yml
 		.github\config.yml = .github\config.yml
-		.github\workflows\pull-request-checks.yml = .github\workflows\pull-request-checks.yml
-		.github\workflows\update-dependencies.yml = .github\workflows\update-dependencies.yml
+		.github\dependabot.yml = .github\dependabot.yml
+		.github\workflows\nanoframework-build-library.yml = .github\workflows\nanoframework-build-library.yml
+		.github\workflows\nanoframework-update-dependencies.yml = .github\workflows\nanoframework-update-dependencies.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1B6C75FB-0A46-4027-9BA0-13BC61F06C78}"
