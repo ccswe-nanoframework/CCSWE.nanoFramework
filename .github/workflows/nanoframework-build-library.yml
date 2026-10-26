@@ -16,7 +16,7 @@ permissions:
 jobs:
   # Keep the id: required checks are `pipeline / build`, `/ package-lock`, `/ packages-updated`.
   pipeline:
-    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@nuget-trusted-publishing
+    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@master
     with:
       solution: 'CCSWE.nanoFramework.sln'
       discover-dependents: |
@@ -38,7 +38,7 @@ jobs:
       indexed: ${{ steps.publish.outputs.indexed }}
     steps:
       - id: publish
-        uses: ccswe-apps/actions/.github/actions/nuget-org-publish@nuget-trusted-publishing
+        uses: ccswe-apps/actions/.github/actions/nuget-org-publish@master
         with:
           user: CoryCharlton
           packages: ${{ needs.pipeline.outputs.packages }}
@@ -51,7 +51,7 @@ jobs:
     if: ${{ !cancelled() && needs.pipeline.result == 'success' && needs.pipeline.outputs.owners != '' }}
     permissions:
       contents: read
-    uses: ccswe-apps/actions/.github/workflows/dispatch-dependents.yml@nuget-trusted-publishing
+    uses: ccswe-apps/actions/.github/workflows/dispatch-dependents.yml@master
     with:
       owners: ${{ needs.pipeline.outputs.owners }}
       updater: ccswe-apps/actions/.github/workflows/nanoframework-update-dependencies.yml
@@ -61,15 +61,3 @@ jobs:
     secrets:
       AUTOMATION_APP_ID: ${{ secrets.AUTOMATION_APP_ID }}
       AUTOMATION_APP_KEY: ${{ secrets.AUTOMATION_APP_KEY }}
-
-  # TEMPORARY (drop before merge): proves the nuget.org policy matches without publishing.
-  tp-check:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      id-token: write
-    steps:
-      - uses: NuGet/login@v1
-        with:
-          user: CoryCharlton
