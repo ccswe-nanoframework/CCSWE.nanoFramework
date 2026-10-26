@@ -42,7 +42,7 @@ vstest.console.exe "test\UnitTests.CCSWE.nanoFramework.Core\bin\Release\NFUnitTe
 
 Test assemblies are compiled to `NFUnitTest.dll`. Each test project includes a `nano.runsettings` file (simulated device by default).
 
-CI/CD uses the `ccswe-apps/actions` nanoFramework workflows (`.github/workflows/nanoframework-build-library.yml`: required checks `pipeline / build`, `/ package-lock`, `/ packages-updated`; publishes to nuget.org when `src`, `version.json`, `Directory.Build.props` or `nuget.config` change, then sends `update-dependencies` to the `CoryCharlton` listeners such as Emily.Clock). Builds require Windows; there is no local Linux build.
+CI/CD uses the `ccswe-apps/actions` nanoFramework workflows (`.github/workflows/nanoframework-build-library.yml`: required checks `pipeline / build`, `/ package-lock`, `/ packages-updated`; when `src`, `version.json`, `Directory.Build.props` or `nuget.config` change, the caller's `publish` job pushes to nuget.org with Trusted Publishing (the CCSWE organization's policy for this repo and workflow file; no API key), then `dependents` sends `update-dependencies` to the `CoryCharlton` listeners such as Emily.Clock). Builds require Windows; there is no local Linux build.
 
 ## Repository Layout
 

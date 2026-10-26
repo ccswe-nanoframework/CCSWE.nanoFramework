@@ -16,12 +16,60 @@ permissions:
 jobs:
   # Keep the id: required checks are `pipeline / build`, `/ package-lock`, `/ packages-updated`.
   pipeline:
-    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@master
+    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@nuget-trusted-publishing
     with:
       solution: 'CCSWE.nanoFramework.sln'
       discover-dependents: |
         CoryCharlton
     secrets:
-      NUGET_API_KEY: ${{ secrets.NUGET_ORG_API_KEY }}
       AUTOMATION_APP_ID: ${{ secrets.AUTOMATION_APP_ID }}
       AUTOMATION_APP_KEY: ${{ secrets.AUTOMATION_APP_KEY }}
+
+  # nuget.org Trusted Publishing: the CCSWE organization's policy names this repo and this file.
+  publish:
+    needs: pipeline
+    if: needs.pipeline.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      indexed: ${{ steps.publish.outputs.indexed }}
+    steps:
+      - id: publish
+        uses: ccswe-apps/actions/.github/actions/nuget-org-publish@nuget-trusted-publishing
+        with:
+          user: CoryCharlton
+          packages: ${{ needs.pipeline.outputs.packages }}
+          version: ${{ needs.pipeline.outputs.version }}
+          index: registration
+
+  # Runs on every build (PRs log the discovered set); sends only once nuget.org serves the publish.
+  dependents:
+    needs: [pipeline, publish]
+    if: ${{ !cancelled() && needs.pipeline.result == 'success' && needs.pipeline.outputs.owners != '' }}
+    permissions:
+      contents: read
+    uses: ccswe-apps/actions/.github/workflows/dispatch-dependents.yml@nuget-trusted-publishing
+    with:
+      owners: ${{ needs.pipeline.outputs.owners }}
+      updater: ccswe-apps/actions/.github/workflows/nanoframework-update-dependencies.yml
+      version: ${{ needs.pipeline.outputs.version }}
+      packages: ${{ needs.pipeline.outputs.packages }}
+      send: ${{ needs.publish.result == 'success' && needs.publish.outputs.indexed == 'true' }}
+    secrets:
+      AUTOMATION_APP_ID: ${{ secrets.AUTOMATION_APP_ID }}
+      AUTOMATION_APP_KEY: ${{ secrets.AUTOMATION_APP_KEY }}
+
+  # TEMPORARY (drop before merge): proves the nuget.org policy matches without publishing.
+  tp-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      id-token: write
+    steps:
+      - uses: NuGet/login@v1
+        with:
+          user: CoryCharlton
