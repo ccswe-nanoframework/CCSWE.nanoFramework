@@ -16,7 +16,7 @@ permissions:
 jobs:
   # Keep the id: required checks are `pipeline / build`, `/ package-lock`, `/ packages-updated`.
   pipeline:
-    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@master
+    uses: ccswe-apps/actions/.github/workflows/nanoframework-build-library.yml@v1
     with:
       solution: 'CCSWE.nanoFramework.sln'
       discover-dependents: |
@@ -38,7 +38,7 @@ jobs:
       indexed: ${{ steps.publish.outputs.indexed }}
     steps:
       - id: publish
-        uses: ccswe-apps/actions/.github/actions/nuget-org-publish@master
+        uses: ccswe-apps/actions/.github/actions/nuget-org-publish@v1
         with:
           user: CoryCharlton
           packages: ${{ needs.pipeline.outputs.packages }}
@@ -51,7 +51,7 @@ jobs:
     if: ${{ !cancelled() && needs.pipeline.result == 'success' && needs.pipeline.outputs.owners != '' }}
     permissions:
       contents: read
-    uses: ccswe-apps/actions/.github/workflows/dispatch-dependents.yml@master
+    uses: ccswe-apps/actions/.github/workflows/dispatch-dependents.yml@v1
     with:
       owners: ${{ needs.pipeline.outputs.owners }}
       updater: ccswe-apps/actions/.github/workflows/nanoframework-update-dependencies.yml
